@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <Type Name="Practic::String">
+	  <DisplayString Condition="data.asFields.mode == 0">i: {data.asCharsBuffer}</DisplayString>
+	  <DisplayString Condition="data.asFields.mode == 1">L: {(char *)data.asFields.pointer}</DisplayString>
+	  <DisplayString Condition="data.asFields.mode == 2">A({((Practic::_Allocation *)data.asFields.pointer)->references}): {((Practic::_Allocation *)data.asFields.pointer)->buffer}</DisplayString>
+	  <DisplayString Condition="data.asFields.mode == 3">Uninitialized</DisplayString>
+  </Type>
+</AutoVisualizer>
