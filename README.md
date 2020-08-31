@@ -10,9 +10,11 @@ Command line tool for extracting symbols from Verilog source files. Symbols are 
 
 ### Mark Symbols in Verilog Source Files
 
-Symbols for showing in GTKWave have to be grouped in verilog's `localparam` block with a special formatted comment. The comment marks that the block is intended for extracting symbols by SymbolEx. The comment has to be the single line comment (starting with `//`). The comment starts with the core name of the symbols file preceded by the `$` character which is not the part of the name. After the name follows bit size of the extracted values. The bit size has to be the same as a bit size of the register displayed in GTKWave.
+Symbols for showing in GTKWave have to be grouped in verilog's `localparam` block with a special formatted comment. The comment marks that the block is intended for extracting symbols by SymbolEx. The comment has to be the single line comment (starting with `//`). The comment contains the name of the symbols block preceded by the character `$` which is not the part of the name. After the name follows a bit size of the extracted values. The bit size has to be the same as a bit size of the register or wire displayed in GTKWave. 
 
-Next example defines four symbol which will be extracted to file with name "States". Values will have size 4 bits.
+Block `localparam` for marked for extracting can contain only non-negative number constants. All formats of Verilog numbers are supported. One file can contain more marked `localparam` blocks. Other parts of verilog source code are ignored.
+
+Next example defines four symbols in block with the name "State". Values will have size 4 bits.
 
 ```verilog
   localparam // $State:4
@@ -22,7 +24,7 @@ Next example defines four symbol which will be extracted to file with name "Stat
     sStopBit  = 'b1000;
 ```
 
-After the bit size can follows identifier prefix separated by comma. If the prefix is specified then SymbolEx removes that prefix from all identifiers in extracted block. It can be useful for increase clarity when displayed in GTKWave. For the previous example can be used `// $State:4,s` for removing prefix "s" from extracted symbols.
+After the bit size can follows identifier prefix separated by comma. If a prefix is specified then SymbolEx removes the prefix from all identifiers in extracted block. It can be useful for increase clarity when displayed in GTKWave. For the previous example can be used `// $State:4,s` for removing prefix "s" from extracted symbols.
 
 
 
@@ -34,7 +36,7 @@ Use SymbolEx for extracting symbols to files. You can specify verilog source fil
 symbolex SerialTransmitter.v
 ```
 
-Symbolex extracts symbols from each marked `localparam` block to separate file. Files are named by pattern `source_file.block_name.txt`. So for the previous example is created file with name `SerialTransmitter.State.txt`. You can specify output directory for extracted files as a second parameter. Option `--verbosity` can be used for listing processing details in several levels. For details run the SymbolEx without parameters.
+Symbolex extracts symbols from each marked `localparam` block to separate file. Files are named by pattern `source_file.block_name.txt`. So for previous two examples is created file with name `SerialTransmitter.State.txt`. You can specify output directory for extracted files as a second parameter. Option `--verbosity` can be used for listing processing details in several levels. For syntax details run the SymbolEx without parameters.
 
 Files with exported symbols have simple text format. For details read the manual of GTKWave. SymbolEx always converts numbers to hexadecimal format. For previous example SymbolEx will generate file with the following content:
 
