@@ -1,4 +1,3 @@
-// Class implementing string with in-place buffer, copy-on-write semantic and supporting literals
 // Copyright (c) 2020 Stanislav Jurny (github.com/STjurny) licence MIT
 
 #include <cstdio>

@@ -1,5 +1,5 @@
-// Class implementing string with in-place buffer, copy-on-write and supporting literals
-// Programmed by Stanislav Jurny (c) 2.2020
+// Class implementing a string according to the ideas of Stanislav Jurny.
+// Copyright (c) 2020 Stanislav Jurny (github.com/STjurny) licence MIT
 
 #pragma once
 #ifndef _PracticString_
