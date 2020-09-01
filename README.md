@@ -53,7 +53,7 @@ Files with exported symbols have simple text format. For details read the manual
 
 For switch signal values from numbers to text identifiers use function "Translate Filter Files". Move wire or register between displayed signals. __Then select the signal clicking on it.__ Then right click on the signal name. In a popup menu select "Data Format" then "Translate Filter File" and then "Enable and Select". In a window click on button "Add Filter to List" and choose the file with extracted symbols. __Then select the line with file path clicking on it.__ Then click on the button "OK".
 
-The data format of signal selected in GTKWave has to be "Hex" becouse values of symbols exported by SymbolEx are always in hexadecimal format and GTKWave compares values as a text. The "Hex" data format is default after insert signal between displayed. So there is no need to change the data format.
+The data format of signal selected in GTKWave has to be "Hex" because values of symbols exported by SymbolEx are always in hexadecimal format and GTKWave compares values as a text. The "Hex" data format is default after insert signal between displayed. So there is no need to change the data format.
 
 Tested with GTKWave 3.3.100.
 
