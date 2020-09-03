@@ -1,6 +1,6 @@
 # SymbolEx
  
-Command line tool for extracting symbols from Verilog source files. Symbols are extracted into files which can be used by GTKWave to replace number values with text identifiers in wave diagrams. That's useful for debugging FSM.
+Command line tool for extracting symbols from Verilog source files. Symbols are extracted into files that can be used by GTKWave to replace numeric values with text identifiers in waveforms. This is useful for debugging FSM.
 
 ![GTKWave](Doc/GTKWave.png)
 
